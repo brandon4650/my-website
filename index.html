@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="FACK RUG COINS - The Anti-Rug Pull Revolution" />
+    <meta property="og:title" content="FACK RUG COINS ($FRC)" />
+    <meta property="og:description" content="The Ultimate Anti-Rug Pull Token" />
+    <title>FACK RUG COINS ($FRC)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@400;900&display=swap" rel="stylesheet">
+    <style>
+        /* Your original styles */
+        body {
+            background: #000000;
+            font-family: 'Londrina Solid', cursive;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        /* Add raccoon image positioning */
+        .raccoon-left {
+            position: absolute;
+            top: 140px;
+            left: 400px;
+            max-width: 150px;
+            scale: 3;
+            z-index: 50;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .raccoon-right {
+            position: absolute;
+            top: 240px;
+            right: 400px;
+            max-width: 150px;
+            z-index: 50;
+            scale: 2;
+            transform: scaleX(1);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .raccoon-bottom {
+            position: fixed;
+            bottom: 190px;
+            right: 200px;
+            max-width: 150px;
+            z-index: 50;
+            transform: scale(2);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        /* Add contract text animation */
+        @keyframes shineRed {
+            0% {
+                color: #ff0000;
+                text-shadow: 0 0 5px #ff0000;
+            }
+
+            50% {
+                color: #ff6b6b;
+                text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000;
+            }
+
+            100% {
+                color: #ff0000;
+                text-shadow: 0 0 5px #ff0000;
+            }
+        }
+
+        .contract-text-shine {
+            animation: shineRed 2s infinite;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+
+        /* Your original animations */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-20px) rotate(-2deg);
+            }
+
+            75% {
+                transform: translateY(20px) rotate(2deg);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+
+        @keyframes shine {
+            0% {
+                background-position: -100% 50%;
+            }
+
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+
+        /* Modified roadmap animation */
+        @keyframes dashMove {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes drawLine {
+            0% {
+                stroke-dashoffset: 1000;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* Your original text styles */
+        .bright-glow {
+            text-shadow: 0 0 10px #fff,
+                0 0 20px #ff0000,
+                0 0 30px #ff0000,
+                0 0 40px #ff0000;
+            animation: pulse 2s infinite;
+        }
+
+        /* Keep your original classes */
+        .hero-bg {
+            background: black;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .float-animation {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Original sizes */
+        h1 {
+            font-size: 6rem !important;
+        }
+
+        h2 {
+            font-size: 4rem !important;
+        }
+
+        h3 {
+            font-size: 3.5rem !important;
+        }
+
+        p {
+            font-size: 1.8rem !important;
+        }
+
+        .nav-link {
+            font-size: 1.5rem !important;
+        }
+
+        /* New side-by-side container */
+        .stats-roadmap-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Stats box styling */
+        .stats-box {
+            background: rgba(255, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 0, 0, 0.3);
+        }
+
+        .stats-item ul {
+            margin-top: 1rem;
+        }
+
+        .stats-item li {
+            line-height: 1.4;
+            position: relative;
+        }
+
+        .stats-item li span.font-bold {
+            color: #feffff;
+        }
+
+        .stats-item {
+            background: rgba(255, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border: 1px solid rgba(255, 0, 0, 0.2);
+        }
+
+        .roadmap-path {
+            stroke: #ff0000;
+            stroke-width: 3;
+            stroke-dasharray: 5, 5;
+            filter: drop-shadow(0 0 4px #ff0000);
+            opacity: 0;
+        }
+
+        .roadmap-path.path-1 {
+            animation: drawLine 2s linear forwards;
+        }
+
+        .roadmap-path.path-2 {
+            animation: drawLine 2s linear forwards;
+            animation-delay: 2s;
+        }
+
+        @keyframes drawLine {
+            0% {
+                stroke-dashoffset: 1000;
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+                opacity: 1;
+            }
+        }
+
+        .glow-dot {
+            animation: glowPulse 2s infinite;
+        }
+
+        @keyframes glowPulse {
+
+            0%,
+            100% {
+                r: 4;
+                filter: drop-shadow(0 0 2px #ff0000);
+            }
+
+            50% {
+                r: 6;
+                filter: drop-shadow(0 0 6px #ff0000);
+            }
+        }
+
+        /* Copy button */
+        .copy-button {
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            color: white;
+            transition: all 0.3s ease;
+            margin-left: 1rem;
+        }
+
+        .copy-button:hover {
+            background: rgba(255, 0, 0, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        }
+
+        .contract-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .about-text {
+            font-size: 4rem !important;
+            /* Even smaller text */
+            line-height: 1.2 !important;
+        }
+
+        .about-header {
+            font-size: 2rem !important;
+            /* Even smaller header */
+        }
+
+        /* Phase boxes text sizing */
+        .roadmap h4 {
+            font-size: 3.5rem !important;
+            /* Phase titles */
+        }
+
+        .roadmap ul li {
+            font-size: 2rem !important;
+            /* Phase content */
+        }
+
+        /* About/Why section text sizing */
+        .stats-box h3,
+        .roadmap h3 {
+            font-size: 3rem !important;
+            /* About/Why titles */
+        }
+
+        .stats-box p,
+        .roadmap p {
+            font-size: 2.2rem !important;
+            /* About/Why content */
+        }
+
+        /* Stats box text sizing */
+        .stats-item h3 {
+            font-size: 4.5rem !important;
+            /* Stats numbers */
+        }
+
+        .stats-item p {
+            font-size: 2.2rem !important;
+            /* Stats labels */
+        }
+
+        /* Social Links & Buy Button Styles */
+        .social-link {
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid rgba(255, 0, 0, 0.3);
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+            background: rgba(255, 0, 0, 0.2);
+        }
+
+        .social-icon {
+            width: 42px;
+            height: 42px;
+            stroke: #ff0000;
+            filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
+        }
+
+        .buy-button {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+                0 0 15px rgba(34, 197, 94, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .buy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2),
+                0 0 20px rgba(34, 197, 94, 0.6);
+            background: linear-gradient(135deg, #2dd46a, #18b54e);
+        }
+
+        .buy-button:active {
+            transform: translateY(1px);
+        }
+
+        .marketing-wallet-container {
+            background: rgba(255, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 0, 0, 0.3);
+        }
+
+        .marketing-text {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .wallet-reveal-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .wallet-address {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .reveal-button {
+            background: rgba(255, 0, 0, 0.2);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        .reveal-button:hover {
+            background: rgba(255, 0, 0, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .rugcheck-button {
+            background: linear-gradient(135deg, #ff3d3d, #990000);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+                0 0 15px rgba(255, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-left: 1rem;
+        }
+
+        .rugcheck-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2),
+                0 0 20px rgba(255, 0, 0, 0.6);
+            background: linear-gradient(135deg, #ff4d4d, #aa0000);
+        }
+
+        .rugcheck-button:active {
+            transform: translateY(1px);
+        }
+
+        .why-box-image {
+            position: absolute;
+            bottom: 20px;
+            right: 380px;
+            max-width: 250px;
+            transform: scale(10.5);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip {
+            visibility: hidden;
+            position: absolute;
+            bottom: calc(100% + 30px);
+            /* Increased distance from button */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            /* Increased width */
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            border-radius: 8px;
+            color: white;
+            font-size: 1.2rem;
+            /* Increased font size */
+            line-height: 1.5;
+            text-align: center;
+            z-index: 100;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+            border-top-color: rgba(255, 0, 0, 0.3);
+        }
+
+        .tooltip-container:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .journey-image {
+            width: 350px;
+            height: auto;
+            position: absolute;
+            right: -250px;
+            /* Adjust this value to move left/right */
+            top: 20%;
+            /* Center vertically */
+            transform: translateY(-50%);
+            /* Center vertically */
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="NO-bg racoon.png" alt="Raccoon Left" class="raccoon-left">
+    <img src="racoonimg2.png" alt="Raccoon Right" class="raccoon-right">
+
+    <!-- Navigation stays the same -->
+    <nav class="fixed w-full z-50 glass-effect border-b border-white/30">
+        <!-- [Previous nav code remains the same] -->
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center pt-32 relative">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="float-animation">
+                <h1 class="font-black mb-8 bright-glow text-white">
+                    FACK RUG COINS
+                </h1>
+                <!-- Buy Button -->
+                <a href="https://pump.fun/coin/6rgjoZZJdibQbmFSwziqTPUF6qR7Mb5SF2TuBYExpump" target="_blank"
+                    rel="noopener noreferrer" class="buy-button">
+                    Buy Now
+                </a>
+                <a href="https://rugcheck.xyz/tokens/6rgjoZZJdibQbmFSwziqTPUF6qR7Mb5SF2TuBYExpump" target="_blank"
+                    rel="noopener noreferrer" class="rugcheck-button">
+                    🔍 RugCheck Details
+                </a>
+                <p class="text-white mb-12 bright-glow">The Ultimate Anti-Rug Pull Token</p>
+
+                <!-- Contract Address with Copy Button -->
+                <div class="contract-container flex-1">
+                    <span class="contract-text-shine">Contract:</span>
+                    <span
+                        class="font-black mb-8 bright-glow text-white">6rgjoZZJdibQbmFSwziqTPUF6qR7Mb5SF2TuBYExpump</span>
+                    <button onclick="copyContract()" class="copy-button">
+                        Copy
+                    </button>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex items-center gap-6">
+                    <!-- X/Twitter -->
+                    <a href="https://x.com/FackRugCoins" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" width="24" height="24"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none">
+                            <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                            <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+                        </svg>
+                    </a>
+
+                    <a href="https://t.me/FackRugCoinsFRC" class="social-link" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" width="24" height="24"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none">
+                            <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+                        </svg>
+                    </a>
+
+
+                    <a href="https://pump.fun/coin/6rgjoZZJdibQbmFSwziqTPUF6qR7Mb5SF2TuBYExpump" class="social-link"
+                        target="_blank" rel="noopener noreferrer">
+                        <img src="pump-santa.png" alt="PumpFun" class="social-icon w-6 h-6">
+                    </a>
+
+
+                </div>
+            </div>
+
+            <div class="stats-roadmap-container">
+
+                <div class="stats-box">
+                    <div class="stats-item">
+                        <h3 class="text-2xl font-bold text-white mb-2 bright-glow">100%</h3>
+                        <p class="text-white bright-glow">LP Locked</p>
+                    </div>
+                    <div class="stats-item">
+                        <h3 class="text-2xl font-bold text-white mb-2 bright-glow">0%</h3>
+                        <p class="text-white bright-glow">Tax</p>
+                    </div>
+                    <div class="stats-item">
+                        <h3 class="text-2xl font-bold text-white mb-2 bright-glow">Safe</h3>
+                        <p class="text-white bright-glow">Contract</p>
+                    </div>
+                    <div class="stats-item">
+                        <h3 class="text-2xl font-bold text-white mb-2 bright-glow">Based</h3>
+                        <p class="text-white bright-glow">Team</p>
+                    </div>
+                </div>
+
+                <div class="roadmap">
+                    <h3 class="text-2xl font-bold text-white mb-4 bright-glow">Roadmap</h3>
+                    <div class="relative">
+                        <div class="grid grid-cols-3 gap-4">
+
+                            <div class="stats-item relative">
+                                <div class="dot absolute -right-2 top-1/2 h-4 w-4 rounded-full bg-red-600 z-10">
+                                </div>
+                                <h4 class="text-xl font-bold text-white bright-glow">Phase 1</h4>
+                                <ul class="text-white bright-glow text-sm text-left pl-4 space-y-3">
+                                    <li>• <span class="font-bold">Heavy Marketing Push:</span> Implement a robust
+                                        marketing strategy, including onboarding KOLs, buying trendings etc.</li>
+                                    <li>• <span class="font-bold">Airdrop Campaigns:</span> Increase awareness
+                                        through $FRC token airdrops.</li>
+                                    <li>• <span class="font-bold">Community Development:</span> Building a strong
+                                        and engaged community, establishing a solid floor, and onboarding (whale)
+                                        investors.</li>
+                                </ul>
+                            </div>
+
+                            <div class="stats-item relative">
+                                <div class="dot absolute -left-2 top-1/2 h-4 w-4 rounded-full bg-red-600 z-10">
+                                </div>
+                                <div class="dot absolute -right-2 top-1/2 h-4 w-4 rounded-full bg-red-600 z-10">
+                                </div>
+                                <h4 class="text-xl font-bold text-white bright-glow">Phase 2</h4>
+                                <ul class="text-white bright-glow text-sm text-left pl-4 space-y-3">
+                                    <li>• <span class="font-bold">Strategic Partnerships:</span> Build partnerships
+                                        with other tokens and organizations to strengthen $FRC's growth.</li>
+                                    <li>• <span class="font-bold">Exclusive NFT Collection:</span> Release a special
+                                        NFT collection for $FRC holders and continue arranging various community
+                                        contests.</li>
+                                    <li>• <span class="font-bold">Animation:</span> Producing engaging animated
+                                        content for marketing campaigns and social media.</li>
+                                </ul>
+                            </div>
+
+
+                            <div class="stats-item relative">
+                                <div class="dot absolute -left-2 top-1/2 h-4 w-4 rounded-full bg-red-600 z-10">
+                                </div>
+                                <h4 class="text-xl font-bold text-white bright-glow">Phase 3</h4>
+                                <ul class="text-white bright-glow text-sm text-left pl-4 space-y-3">
+                                    <li>• <span class="font-bold">Staking Launch:</span> Launch $FRC staking.</li>
+                                    <li>• <span class="font-bold">Merchandise:</span> Roll out branded merchandise.
+                                    </li>
+                                    <li>• <span class="font-bold">CEX:</span> Pursue CEX/CMC listings.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
+                            <path class="connecting-line path-1" d="M33% 50% L 66% 50%" />
+                            <path class="connecting-line path-2" d="M66% 50% L 99% 50%" />
+                        </svg>
+                    </div>
+                </div>
+
+
+                <div class="flex justify-center space-x-10 mt-16">
+                </div>
+            </div>
+    </section>
+
+
+    <section id="about" class="py-20 relative overflow-hidden">
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+            <div class="stats-roadmap-container">
+
+                <div class="stats-box">
+                    <h3 class="text-2xl font-bold text-white mb-4 bright-glow">About $FRC</h3>
+                    <p class="text-white text-base bright-glow">
+                        Introducing this coin because, like you, I'm tired of losing money to scammy rug pulls. This is
+                        a project built on trust and transparency. No games, no gimmicks—just a solid coin from someone
+                        who's been where you are. Join me in creating a community we can actually believe in!
+                    </p>
+                </div>
+
+                <div class="stats-box" style="position: relative; padding-bottom: 150px;">
+
+                    <h3 class="text-2xl font-bold text-white mb-4 bright-glow">Why FACK RUG COINS?</h3>
+                    <p class="text-white text-base bright-glow">
+                        Aren't you tired of losing money to rug pull coins? I know I am. That's why I created FACK RUG
+                        COINS—a project built for people like us who are fed up with scams and want something real.
+                        Let's come together and invest in a coin that stands for trust, transparency, and community.
+                        It's time to take back control and build something solid—together!
+                    </p>
+                    <img src="rugpile.png" alt="Raccoon bottom" class="why-box-image">
+                </div>
+            </div>
+            <div class="marketing-wallet-container relative">
+                <div class="flex items-center justify-between"> <!-- Added justify-between -->
+                    <!-- Left side content -->
+                    <div class="flex-1"> <!-- Added flex-1 to take up available space -->
+                        <div class="marketing-text bright-glow mb-4">
+                            Wanna donate to help boost? 🚀
+                        </div>
+                        <div class="wallet-reveal-container">
+                            <div id="walletAddress" class="wallet-address hidden">
+                                <span
+                                    class="font-black bright-glow text-white">Af6b18BrNLdTHD5reUEmxvNz8qmoQrTWdPrebC95pgyR</span>
+                                <button onclick="copyMarketingWallet()" class="copy-button ml-2">
+                                    Copy
+                                </button>
+                            </div>
+                            <div class="tooltip-container">
+                                <button onclick="toggleWallet()" id="revealButton" class="reveal-button">
+                                    Reveal Marketing Address
+                                </button>
+                                <div class="tooltip">
+                                    The marketing wallet is strictly dedicated to marketing efforts. Donations are
+                                    entirely optional, but if you choose to contribute, the team will be deeply grateful
+                                    for your support in helping us grow and achieve goals beyond our expectations. ❤️ ❤️
+                                    ❤️
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right side image -->
+                    <div class="ml-8"> <!-- Added margin-left for spacing -->
+                        <img src="journey.png" alt="Journey" class="journey-image float-animation">
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <script>
+        function copyContract() {
+            const contract = "6rgjoZZJdibQbmFSwziqTPUF6qR7Mb5SF2TuBYExpump";
+            navigator.clipboard.writeText(contract).then(() => {
+                const button = document.querySelector('.copy-button');
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+
+        function toggleWallet() {
+            const walletAddress = document.getElementById('walletAddress');
+            const revealButton = document.getElementById('revealButton');
+
+            if (walletAddress.classList.contains('hidden')) {
+                walletAddress.classList.remove('hidden');
+                revealButton.textContent = 'Hide Marketing Address';
+            } else {
+                walletAddress.classList.add('hidden');
+                revealButton.textContent = 'Reveal Marketing Address';
+            }
+        }
+
+        function copyMarketingWallet() {
+            const wallet = "Af6b18BrNLdTHD5reUEmxvNz8qmoQrTWdPrebC95pgyR";
+            navigator.clipboard.writeText(wallet).then(() => {
+                const copyButton = document.querySelector('#walletAddress .copy-button');
+                copyButton.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyButton.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+
+</html>
