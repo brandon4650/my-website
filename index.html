@@ -11,7 +11,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@400;900&display=swap" rel="stylesheet">
     <style>
-        /* Your original styles */
         body {
             background: #000000;
             font-family: 'Londrina Solid', cursive;
@@ -23,7 +22,6 @@
             font-size: 20px;
         }
 
-        /* Add raccoon image positioning */
         .raccoon-left {
             position: absolute;
             top: 140px;
@@ -55,7 +53,6 @@
             animation: float 8s ease-in-out infinite;
         }
 
-        /* Add contract text animation */
         @keyframes shineRed {
             0% {
                 color: #ff0000;
@@ -79,7 +76,6 @@
             font-size: 2rem;
         }
 
-        /* Your original animations */
         @keyframes float {
 
             0%,
@@ -120,7 +116,6 @@
             }
         }
 
-        /* Modified roadmap animation */
         @keyframes dashMove {
             to {
                 stroke-dashoffset: 0;
@@ -137,7 +132,6 @@
             }
         }
 
-        /* Your original text styles */
         .bright-glow {
             text-shadow: 0 0 10px #fff,
                 0 0 20px #ff0000,
@@ -146,7 +140,6 @@
             animation: pulse 2s infinite;
         }
 
-        /* Keep your original classes */
         .hero-bg {
             background: black;
             position: relative;
@@ -172,7 +165,6 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
-        /* Original sizes */
         h1 {
             font-size: 6rem !important;
         }
@@ -193,7 +185,6 @@
             font-size: 1.5rem !important;
         }
 
-        /* New side-by-side container */
         .stats-roadmap-container {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -203,7 +194,6 @@
             margin: 0 auto;
         }
 
-        /* Stats box styling */
         .stats-box {
             background: rgba(255, 0, 0, 0.1);
             border-radius: 15px;
@@ -284,7 +274,6 @@
             }
         }
 
-        /* Copy button */
         .copy-button {
             background: rgba(255, 0, 0, 0.1);
             border: 1px solid rgba(255, 0, 0, 0.3);
@@ -314,51 +303,39 @@
 
         .about-text {
             font-size: 4rem !important;
-            /* Even smaller text */
             line-height: 1.2 !important;
         }
 
         .about-header {
             font-size: 2rem !important;
-            /* Even smaller header */
         }
 
-        /* Phase boxes text sizing */
         .roadmap h4 {
             font-size: 3.5rem !important;
-            /* Phase titles */
         }
 
         .roadmap ul li {
             font-size: 2rem !important;
-            /* Phase content */
         }
 
-        /* About/Why section text sizing */
         .stats-box h3,
         .roadmap h3 {
             font-size: 3rem !important;
-            /* About/Why titles */
         }
 
         .stats-box p,
         .roadmap p {
             font-size: 2.2rem !important;
-            /* About/Why content */
         }
 
-        /* Stats box text sizing */
         .stats-item h3 {
             font-size: 4.5rem !important;
-            /* Stats numbers */
         }
 
         .stats-item p {
             font-size: 2.2rem !important;
-            /* Stats labels */
         }
 
-        /* Social Links & Buy Button Styles */
         .social-link {
             padding: 0.5rem;
             border-radius: 8px;
@@ -512,18 +489,15 @@
             visibility: hidden;
             position: absolute;
             bottom: calc(100% + 30px);
-            /* Increased distance from button */
             left: 50%;
             transform: translateX(-50%);
             width: 400px;
-            /* Increased width */
             padding: 1.5rem;
             background: rgba(0, 0, 0, 0.9);
             border: 1px solid rgba(255, 0, 0, 0.3);
             border-radius: 8px;
             color: white;
             font-size: 1.2rem;
-            /* Increased font size */
             line-height: 1.5;
             text-align: center;
             z-index: 100;
@@ -553,11 +527,8 @@
             height: auto;
             position: absolute;
             right: -250px;
-            /* Adjust this value to move left/right */
             top: 20%;
-            /* Center vertically */
             transform: translateY(-50%);
-            /* Center vertically */
         }
     </style>
 </head>
@@ -567,19 +538,15 @@
     <img src="NO-bg racoon.png" alt="Raccoon Left" class="raccoon-left">
     <img src="racoonimg2.png" alt="Raccoon Right" class="raccoon-right">
 
-    <!-- Navigation stays the same -->
     <nav class="fixed w-full z-50 glass-effect border-b border-white/30">
-        <!-- [Previous nav code remains the same] -->
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero-bg min-h-screen flex items-center justify-center pt-32 relative">
         <div class="container mx-auto px-6 text-center relative z-10">
             <div class="float-animation">
                 <h1 class="font-black mb-8 bright-glow text-white">
                     FACK RUG COINS
                 </h1>
-                <!-- Buy Button -->
                 <a href="https://pump.fun/coin/6rgjoZZJdibQbmFSwziqTPUF6qR7Mb5SF2TuBYExpump" target="_blank"
                     rel="noopener noreferrer" class="buy-button">
                     Buy Now
