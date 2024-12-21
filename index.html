@@ -526,9 +526,209 @@
             width: 350px;
             height: auto;
             position: absolute;
-            right: -250px;
+            right: -350px;
             top: 20%;
             transform: translateY(-50%);
+        }
+
+        .footer {
+            background: rgba(255, 0, 0, 0.1);
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 0, 0, 0.3);
+            color: white;
+            width: 100%;
+            position: relative;
+            z-index: 100;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            color: #ff0000;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            background: rgba(255, 0, 0, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+        }
+
+        .contact-link:hover {
+            color: #ff6b6b;
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .contact-username {
+            background: linear-gradient(135deg, #ff0000, #990000);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contact-username:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+                overflow-x: hidden;
+            }
+
+            /* Raccoon Images */
+            .raccoon-left,
+            .raccoon-right,
+            .raccoon-bottom {
+                max-width: 100px;
+                scale: 2;
+                position: absolute;
+                z-index: 50;
+            }
+
+            .raccoon-left {
+                top: 80px;
+                left: 10px;
+            }
+
+            .raccoon-right {
+                top: 120px;
+                right: 10px;
+            }
+
+            .raccoon-bottom {
+                bottom: 100px;
+                right: 50px;
+            }
+
+            /* Responsive Typography */
+            h1 {
+                font-size: 3rem !important;
+            }
+
+            h2 {
+                font-size: 2.5rem !important;
+            }
+
+            h3 {
+                font-size: 2rem !important;
+            }
+
+            p {
+                font-size: 1.5rem !important;
+            }
+
+            /* Layout Adjustments */
+            .stats-roadmap-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .hero-bg {
+                padding-top: 80px;
+            }
+
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            /* Buttons */
+            .buy-button,
+            .rugcheck-button {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            /* Social Links */
+            .social-link {
+                margin: 0 10px;
+            }
+
+            /* Contract Container */
+            .contract-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contract-container span {
+                margin-bottom: 10px;
+            }
+
+            /* Marketing Wallet */
+            .marketing-wallet-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .marketing-wallet-container .flex-1 {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .journey-image {
+                position: static;
+                width: 200px;
+                margin: 1rem auto;
+                transform: none;
+                right: auto;
+                top: auto;
+            }
+
+            /* Footer */
+            .footer {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .footer>div {
+                margin-bottom: 10px;
+            }
+
+            /* Why Box Image */
+            .why-box-image {
+                position: static;
+                max-width: 150px;
+                transform: scale(5);
+                margin: 1rem auto;
+            }
+        }
+
+        /* Prevent Horizontal Scrolling */
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Responsive Media */
+        img,
+        video,
+        iframe {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Ensure Sections are Responsive */
+        section {
+            padding: 2rem 1rem;
         }
     </style>
 </head>
@@ -713,7 +913,8 @@
                     <!-- Left side content -->
                     <div class="flex-1"> <!-- Added flex-1 to take up available space -->
                         <div class="marketing-text bright-glow mb-4">
-                            Want to contribute to our marketing efforts? 🚀 Every donation helps us reach new heights! 🚀
+                            Want to contribute to our marketing efforts? 🚀 Every donation helps us reach new heights!
+                            🚀
                         </div>
                         <div class="wallet-reveal-container">
                             <div id="walletAddress" class="wallet-address hidden">
@@ -745,7 +946,30 @@
             </div>
     </section>
 
+    <footer class="footer">
+        <div class="contact-section">
+            <span class="contact-username" onclick="copyDiscord()">Website Creator Discord: sir.wiggles</span>
+        </div>
+        <div class="copyright">
+            © 2024 All Rights Reserved $FRC
+        </div>
+        <div class="discord-section">
+            <!-- Empty for now, could be used for additional content if needed -->
+        </div>
+    </footer>
+
     <script>
+
+        function copyDiscord() {
+            const discordUsername = "@sir.wiggles";
+            navigator.clipboard.writeText(discordUsername).then(() => {
+                const usernameElement = document.querySelector('.contact-username');
+                usernameElement.textContent = 'Copied!';
+                setTimeout(() => {
+                    usernameElement.textContent = discordUsername;
+                }, 2000);
+            });
+        }
         function copyContract() {
             const contract = "6rgjoZZJdibQbmFSwziqTPUF6qR7Mb5SF2TuBYExpump";
             navigator.clipboard.writeText(contract).then(() => {
@@ -780,6 +1004,7 @@
                 }, 2000);
             });
         }
+
     </script>
 </body>
 
