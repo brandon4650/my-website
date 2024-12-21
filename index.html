@@ -1018,7 +1018,7 @@
         const balanceElement = document.getElementById('walletBalance');
         
         try {
-            const response = await fetch(`https://api.helius.xyz/v0/addresses/${walletAddress}/balances?api-key=API_KEY`);
+            const response = await fetch(`https://api.helius.xyz/v0/addresses/${walletAddress}/balances?api-key=8092ba2b-3ad9-43e6-be4d-d86e4bb2f0c5`);
             const data = await response.json();
             if (data && data.nativeBalance) {
                 const solBalance = (data.nativeBalance / 1000000000).toFixed(4);
